@@ -1,0 +1,92 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import javax.swing.*;
+
+public class IslandSinkingPanel extends JFrame{
+    private static final int WIDTH = 400;
+    private static final int HEIGHT = 300;
+    private JPanel movePanel;
+    private JButton  up, down, left, right;
+    private Player player;
+    private JLabel instructions, inst;
+    private GameState g;
+
+    public IslandSinkingPanel(String s, Player p, GameState game){
+        super(s);
+        setSize(WIDTH,HEIGHT);
+        setLayout(null);
+        player = p;
+        g = game;
+        Container contentPane = getContentPane();
+        setLocationRelativeTo(null);
+
+        movePanel = new JPanel(null);
+        movePanel.setSize(400,300);
+        movePanel.setLocation(0,0);
+
+
+        instructions = new JLabel("The tile you are on has sunk! Swim to a new tile!");
+        instructions.setBounds(30,40,800,20);
+        instructions.setFont(new Font("TimesNewRoman", Font.PLAIN, 15));
+        movePanel.add(instructions);
+
+        up = new JButton("Up");
+        up.setBounds(140, 90,80,40);
+        up.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                player.moveUp();
+                dispose();
+            }
+        });
+
+        down = new JButton("Down");
+        down.setBounds(140, 180,80,40);
+        down.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                player.moveDown();
+                dispose();
+
+            }
+        });
+
+        left = new JButton("Left");
+        left.setBounds(55, 135,80,40);
+        left.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                player.moveLeft();
+                dispose();
+
+            }
+        });
+
+        right = new JButton("Right");
+        right.setBounds(225, 135,80,40);
+        right.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                player.moveRight();
+                dispose();
+
+            }
+        });
+
+        movePanel.add(up);
+        movePanel.add(down);
+        movePanel.add(left);
+        movePanel.add(right);
+
+
+
+        contentPane.add(movePanel);
+        setVisible(true);
+
+
+
+
+    }
+}
