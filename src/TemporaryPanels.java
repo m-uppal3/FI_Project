@@ -52,6 +52,8 @@ public class TemporaryPanels extends JFrame{
 
                 if(cnt==3){
                     dispose(); //gets rid of window
+                    game.drawTreasureCards();
+                    game.drawFloodCards();
 
                 }
 
@@ -66,7 +68,8 @@ public class TemporaryPanels extends JFrame{
                 cnt++;
                 if(cnt==3){
                     dispose(); //gets rid of window
-                    
+                    game.drawTreasureCards();
+                    game.drawFloodCards();
                 }
             });
 
@@ -78,7 +81,8 @@ public class TemporaryPanels extends JFrame{
 
             if(cnt==3){
                 dispose(); //gets rid of window
-                
+                game.drawTreasureCards();
+                game.drawFloodCards();
             }
         });
 
@@ -91,7 +95,8 @@ public class TemporaryPanels extends JFrame{
                 cnt++;
                 if(cnt==3){
                     dispose(); //gets rid of window
-                    
+                    game.drawTreasureCards();
+                    game.drawFloodCards();
                 }
             });
 
@@ -129,7 +134,8 @@ public class TemporaryPanels extends JFrame{
             cnt++;
             if(cnt==3){
                 dispose(); //gets rid of window
-                
+                game.drawTreasureCards();
+                game.drawFloodCards();
             }
         });
 
@@ -140,7 +146,8 @@ public class TemporaryPanels extends JFrame{
 
             player.skipTurns();
             dispose();
-            
+            game.drawTreasureCards();
+            game.drawFloodCards();
 
         });
 

@@ -102,8 +102,7 @@ public class BasicPermanentPanel extends JFrame{
                     JFrame mainPermanentPanelFinal = new JFrame("Main game");
                     mainPermanentPanelFinal.setSize(1100, 675);
                     TemporaryPanels pan = new TemporaryPanels("Action Panel", currentPlayer, gameState, ml);
-                    gameState.drawTreasureCards();
-                    gameState.drawFloodCards();
+
 
                     if(gameState.playerIsStranded(currentPlayer)){
                         IslandSinkingPanel ip = new IslandSinkingPanel("Island Sinking Panel", currentPlayer, gameState);
@@ -111,6 +110,7 @@ public class BasicPermanentPanel extends JFrame{
 
                     if(rand < playersArrayList.size() ){
                         currentPlayer = playersArrayList.get(rand);
+                        rand++;
                     }
                     else{
                         rand=0;
