@@ -14,12 +14,12 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 
-public class BasicPermanentPanel extends JFrame {
+public class BasicPermanentPanel extends JFrame{
     final int WIDTH = 320;
-    final int HEIGHT = 270;
+    final int HEIGHT = 370;
     JFrame extraOne;
     JPanel extraPanel;
-    JButton shoreUp, helicopterLift, doneWithTurn;
+    JButton shoreUp, helicopterLift, nextPlayer;
     JLabel instructions;
     ArrayList<Player> players;
     Player currentPlayer;
@@ -31,6 +31,7 @@ public class BasicPermanentPanel extends JFrame {
     GameState gameState;
     Multiplayer mul;
     IslandMap map;
+    int rand;
 
     public BasicPermanentPanel(String bas,GameState g,ArrayList<Player> p, Player cp, WaterMeter wm, IslandMap im, FloodCardsStack fs, TreasureCardStack ts, TreasureStack t, Multiplayer ml) {
         super(bas);
@@ -79,7 +80,65 @@ public class BasicPermanentPanel extends JFrame {
             }
         });
 
+        JPanel escapeIslandP = new JPanel(null);
+        escapeIslandP.setSize(400,300);
+        escapeIslandP.setLocation(0,0);
+        escapeIslandP.setVisible(false);
 
+        nextPlayer = new JButton("Begin Turn");
+        nextPlayer.setBounds(85,220,110,30);
+        nextPlayer.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                if(gameState.gameLost()) {
+                    WaterMeter meter = gameState.getWaterMeter();
+                    IslandMap map = gameState.getGameBoard();
+                    FloodCardsStack floodCards = gameState.getFloodCards();
+                    TreasureCardStack treCards = gameState.getTreasureCards();
+                    TreasureStack treStack = gameState.getTreasures();
+                    Multiplayer mul = gameState.getPlayers();
+                    //gameState.startGame();
+                    ArrayList<Player> playersArrayList = (gameState.getPlayers()).getPlayersUsed();
+                    JFrame mainPermanentPanelFinal = new JFrame("Main game");
+                    mainPermanentPanelFinal.setSize(1100, 675);
+                    TemporaryPanels pan = new TemporaryPanels("Action Panel", currentPlayer, gameState, ml);
+                    gameState.drawTreasureCards();
+                    gameState.drawFloodCards();
+
+                    if(gameState.playerIsStranded(currentPlayer)){
+                        IslandSinkingPanel ip = new IslandSinkingPanel("Island Sinking Panel", currentPlayer, gameState);
+                    }
+
+                    if(rand < playersArrayList.size() ){
+                        currentPlayer = playersArrayList.get(rand);
+                    }
+                    else{
+                        rand=0;
+                        currentPlayer = playersArrayList.get(rand);
+                    }
+                }
+                else if(!gameState.gameLost()){
+                    JLabel newinstructions = new JLabel("Game lost!");
+                    newinstructions.setBounds(20,80,800,30);
+                    newinstructions.setFont(new Font("TimesNewRoman", Font.PLAIN, 15));
+
+                    JButton ex = new JButton("Exit");
+                    ex.setBounds(140, 130, 80, 30);
+                    ex.addActionListener(new ActionListener() {
+                        public void actionPerformed(ActionEvent e) {
+                            System.exit(0);
+                        }
+                    });
+
+                    escapeIslandP.add(newinstructions);
+                    escapeIslandP.add(ex);
+
+                }
+
+            }
+        });
+
+        extraPanel.add(nextPlayer);
         extraPanel.add(shoreUp);
         extraPanel.add(helicopterLift);
 

@@ -53,8 +53,30 @@ public class HelicopterLift extends JFrame{
 
         two.addActionListener(e -> {
 
-            startPanel.setVisible(false);
-            escapeIslandP.setVisible(true);
+            if(game.gameWon()) {
+                startPanel.setVisible(false);
+                escapeIslandP.setVisible(true);
+            }
+            else{
+                startPanel.setVisible(false);
+                escapeIslandP.setVisible(true);
+                newinstructions = new JLabel("Requirements to escape have not been met :(");
+                newinstructions.setBounds(20,80,800,30);
+                newinstructions.setFont(new Font("TimesNewRoman", Font.PLAIN, 15));
+
+                JButton ex = new JButton("Exit");
+                ex.setBounds(140, 130, 80, 30);
+                ex.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        dispose();
+                    }
+                });
+
+
+
+                escapeIslandP.add(newinstructions);
+                escapeIslandP.add(ex);
+            }
 
         });
 
