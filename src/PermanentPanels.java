@@ -43,6 +43,8 @@ public class PermanentPanels {
         //gameState.startGame();
         ArrayList<Player> playersArrayList= (gameState.getPlayers()).getPlayersUsed();
           if(rand<4){
+              gameState.drawTreasureCards();
+              gameState.drawFloodCards();
                cp= playersArrayList.get(rand);
           }
           else{

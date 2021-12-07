@@ -143,4 +143,7 @@ public class Player{
     public int getActionsRemain(){
         return actionsRemain;
     }
+
+    public void drawTreasure() {
+    }
 }

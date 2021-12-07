@@ -2,14 +2,13 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class IntroductionPanel extends JFrame {
@@ -32,13 +31,15 @@ public class IntroductionPanel extends JFrame {
         setResizable(false);
 
         JPanel introPanel = new JPanel(null) {
-            ImageIcon image = new ImageIcon(getClass().getResource("Images/background.png"));
+            //ImageIcon image = new ImageIcon(Objects.requireNonNull(getClass().getResource("Allimages/Background.PNG")));
 
-            public void paint(Graphics g) {
+           /* public void paint(Graphics g) {
 
-                        g.drawImage(image.getImage(), 0, 0, null, null);
+                        g.drawImage(image.getImage(), 0, 0,null,null);
                 super.paint(g);
             }
+            */
+            
         };
         introPanel.setSize(1200, 1200);
         introPanel.setLocation(0,0);

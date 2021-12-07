@@ -27,7 +27,7 @@ class MainPermanentPanel extends JPanel{
 
     ArrayList<ImageFinder> tImageList= new ArrayList<>();
     ArrayList<ImageFinder> cImageList= new ArrayList<>();
-   ArrayList<ImageFinder> pImageList= new ArrayList<>();
+    ArrayList<ImageFinder> pImageList= new ArrayList<>();
 
     private ImageIcon background, fImage, tImage, fDImage, tDImage, waterMeterImage, lionTreasure, blueTreasure, purpleTreasure, redTreasure, waterMarker;
     private ImageIcon tidalpalace,tidalpalaceflooded,coralpalace,coralpalaceflooded,templeofthesun,templeofthesunflooded,templeofthemoon,templeofthemoodflooded;
@@ -55,8 +55,8 @@ class MainPermanentPanel extends JPanel{
 
     public void getEachPlayer(){
         int numOfPlayers= players.size();
-            playerOne=players.get(0);
-            playerTwo=players.get(1);
+        playerOne=players.get(0);
+        playerTwo=players.get(1);
         if(numOfPlayers>2){
             playerThree=players.get(2);
             if(numOfPlayers>3){
@@ -84,8 +84,8 @@ class MainPermanentPanel extends JPanel{
     public void paint(Graphics g) {
         try {
 
-            background= new ImageIcon(Objects.requireNonNull(Objects.requireNonNull(getClass().getResource("AllimagesAllimages/Background.PNG"))));
-            fImage= new ImageIcon(Objects.requireNonNull(Objects.requireNonNull(getClass().getResource("AllimagesAllimages/FloodCard.PNG"))));
+            background= new ImageIcon(Objects.requireNonNull("Allimages/sandy.PNG"));
+            fImage= new ImageIcon(Objects.requireNonNull("Allimages/FloodCard.PNG"));
             tImage= new ImageIcon(Objects.requireNonNull(getClass().getResource("Allimages/TreasureCard.PNG")));
             fDImage= new ImageIcon(Objects.requireNonNull(getClass().getResource("Allimages/FloodDiscard.PNG")));
             tDImage= new ImageIcon(Objects.requireNonNull(getClass().getResource("Allimages/TreasureDiscard.PNG")));
@@ -393,7 +393,7 @@ class MainPermanentPanel extends JPanel{
 
             Image rand= findImageCard(name);
 
-            
+
             g.drawImage(rand,xValue,510,60,85,null);
             g.setFont(new Font("Dialog", 1, 5));
             g.drawString(c.getName(),xValue,610);
@@ -438,8 +438,8 @@ class MainPermanentPanel extends JPanel{
             g.setColor(Color.black);
             g.drawRect(750,110,330,20);
 
-             list= playerThree.getInventory();
-             xValue= 755;
+            list= playerThree.getInventory();
+            xValue= 755;
             for(TreasureCard c: list){
                 String name= c.getName();
                 name=name.toLowerCase();

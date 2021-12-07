@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -34,7 +33,7 @@ public class CaptTresPanel extends JFrame{
         fire = new JButton();
         fire.setBounds(16,100,80,80);
         try {
-            Image img = ImageIO.read(getClass().getResource("Images/Fire.png"));
+            Image img = ImageIO.read(getClass().getResource("Fire.png"));
             Image newimg = img.getScaledInstance(80, 80, Image.SCALE_SMOOTH);
             fire.setIcon(new ImageIcon(newimg));
         } catch (Exception ex) {
@@ -51,7 +50,7 @@ public class CaptTresPanel extends JFrame{
         earth = new JButton();
         earth.setBounds(107,100,80,80);
         try {
-            Image img = ImageIO.read(getClass().getResource("Images/stone.png"));
+            Image img = ImageIO.read(getClass().getResource("stone.png"));
             Image newimg = img.getScaledInstance(80, 80, Image.SCALE_SMOOTH);
             earth.setIcon(new ImageIcon(newimg));
         } catch (Exception ex) {
@@ -70,7 +69,7 @@ public class CaptTresPanel extends JFrame{
         water = new JButton();
         water.setBounds(199,100,80,80);
         try {
-            Image img = ImageIO.read(getClass().getResource("Images/water.png"));
+            Image img = ImageIO.read(getClass().getResource("water.png"));
             Image newimg = img.getScaledInstance(80, 80, Image.SCALE_SMOOTH);
             water.setIcon(new ImageIcon(newimg));
         } catch (Exception ex) {
@@ -89,7 +88,7 @@ public class CaptTresPanel extends JFrame{
         wind = new JButton();
         wind.setBounds(289,100,80,80);
         try {
-            Image img = ImageIO.read(getClass().getResource("Images/wind.png"));
+            Image img = ImageIO.read(getClass().getResource("wind.png"));
             Image newimg = img.getScaledInstance(80, 80, Image.SCALE_SMOOTH);
             wind.setIcon(new ImageIcon(newimg));
         } catch (Exception ex) {
