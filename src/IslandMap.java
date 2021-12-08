@@ -58,11 +58,11 @@ public class IslandMap {
     public void floodTile(FloodCard f) {
         int r = f.getCoordinate().getR();
         int c = f.getCoordinate().getC();
-        if (islandMap[r][c].getFloodedState().equals("Flooded")) {
-            islandMap[r][c].setFloodedState("Sunk");
+        if (islandMap[r][c].getFloodedState().equals("flooded")) {
+            islandMap[r][c].setFloodedState("sunk");
             islandTiles.remove(getIslandTileIndexArrayList(islandMap[r][c]));
-        } else if (islandMap[r][c].getFloodedState().equals("Dry")) {
-            islandMap[r][c].setFloodedState("Flooded");
+        } else if (islandMap[r][c].getFloodedState().equals("dry")) {
+            islandMap[r][c].setFloodedState("flooded");
         }
 
     }
@@ -72,11 +72,11 @@ public class IslandMap {
         int c = coord.getC();
 
         switch (islandMap[r][c].getFloodedState()) {
-            case "Flooded":
-                islandMap[r][c].setFloodedState("Dry");
+            case "flooded":
+                islandMap[r][c].setFloodedState("dry");
                 return true;
-            case "Sunk":
-            case "Dry":
+            case "sunk":
+            case "dry":
                 return false;
         }
         return false;

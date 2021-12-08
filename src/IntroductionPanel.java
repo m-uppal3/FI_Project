@@ -32,7 +32,7 @@ public class IntroductionPanel extends JFrame {
         setResizable(false);
 
         JPanel introPanel = new JPanel(null) {
-            ImageIcon image = new ImageIcon(getClass().getResource("Images/background.png"));
+            ImageIcon image = new ImageIcon(getClass().getResource("Allimages/bg.png"));
 
             public void paint(Graphics g) {
 

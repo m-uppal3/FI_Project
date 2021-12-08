@@ -53,8 +53,8 @@ public class GiveCardPanel extends JFrame{
 
 
                 TreasureCard c = new TreasureCard(giveCard);
-                boolean ifWorked = mp.sendTreasure(player, getReceiver(givePlayer) , c);
-               /* if(ifWorked) {
+                boolean ifWorked = mul.sendTreasure(player, getReceiver(givePlayer) , c);
+                if(ifWorked) {
                     cardPanel.setVisible(false);
                 }
                 else {
@@ -64,7 +64,7 @@ public class GiveCardPanel extends JFrame{
                     JLabel sh = new JLabel("Make sure to be on the same tile with desired receiver!");
                     sh.setBounds(30,50,170,20);
                     contentPane.add(h);
-                } */
+                }
                 dispose();
             }
         });

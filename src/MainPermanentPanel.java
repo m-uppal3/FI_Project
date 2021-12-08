@@ -35,7 +35,7 @@ class MainPermanentPanel extends JPanel{
     private ImageIcon bronzegate,bronzegateflooded,goldgate,goldgateflooded,coppergate,coppergateflooded,silvergate,silvergateflooded,foolslanding,foolslaningflooded,irongate,irongateflooded;
     private ImageIcon dunesofdeception, dunesofdeceptionflooded,citiesofabandon,citiesofabandonflooded, watchtowerflooded, watchtower,twilighthollow,twilighthollowflooded,mistymarsh,mistymarshflooded, lostlagoon,lostlagoonflooded;
     private ImageIcon breakersbridge,breakersbridgeflooded, observatory,observatoryflooded,phantomrock,phantomrockflooded, crimsonforest,crimsonforestflooded;
-    private ImageIcon thecrystaloffire, theearthstone,helicopterlift,theoceanschalice,sandbagCard, thestatueofwind;
+    private ImageIcon thecrystaloffire, theearthstone,helicopterlift,theoceanschalice,sandbagCard, thestatueofthewind;
     private ImageIcon explorer, navigator,engineer,pilot,diver, messenger;
 
     public MainPermanentPanel(GameState g,ArrayList<Player> p, Player cp, WaterMeter wm, IslandMap im, FloodCardsStack fs, TreasureCardStack ts, TreasureStack t, Multiplayer ml){
@@ -49,6 +49,201 @@ class MainPermanentPanel extends JPanel{
         tStack= ts;
         treasureStack=t;
         getEachPlayer();
+
+
+        background= new ImageIcon(( (Objects.requireNonNull(getClass().getResource("Background.PNG")))));
+        fImage= new ImageIcon(( (Objects.requireNonNull(getClass().getResource("FloodCard.PNG")))));
+        tImage= new ImageIcon( (Objects.requireNonNull(getClass().getResource("TreasureCard.PNG"))));
+        fDImage= new ImageIcon( (Objects.requireNonNull(getClass().getResource("FloodDiscard.PNG"))));
+        tDImage= new ImageIcon( (Objects.requireNonNull(getClass().getResource("TreasureDiscard.PNG"))));
+        waterMeterImage= new ImageIcon( (Objects.requireNonNull(getClass().getResource("WaterMeter.PNG"))));
+        blueTreasure= new ImageIcon( (Objects.requireNonNull(getClass().getResource("BlueTreasure.PNG"))));
+        lionTreasure= new ImageIcon( (Objects.requireNonNull(getClass().getResource("LionTreasure.PNG"))));
+        purpleTreasure= new ImageIcon( (Objects.requireNonNull(getClass().getResource("PurpleTreasure.PNG"))));
+        redTreasure= new ImageIcon( (Objects.requireNonNull(getClass().getResource("RedTreasure.PNG"))));
+        waterMarker= new ImageIcon( (Objects.requireNonNull(getClass().getResource("WaterMarker.png"))));
+
+        tidalpalace= new ImageIcon( (Objects.requireNonNull(getClass().getResource("tidalpalace.png"))));
+        tImageList.add(new ImageFinder(tidalpalace.getImage(),"tidalpalace"));
+
+        tidalpalaceflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("tidalpalaceflooded.png"))));
+        tImageList.add(new ImageFinder(tidalpalaceflooded.getImage(),"tidalpalaceflooded"));
+
+        coralpalace= new ImageIcon( (Objects.requireNonNull(getClass().getResource("coralpalace.png"))));
+        tImageList.add(new ImageFinder(coralpalace.getImage(),"coralpalace"));
+
+        coralpalaceflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("coralpalaceflooded.png"))));
+        tImageList.add(new ImageFinder(coralpalaceflooded.getImage(),"coralpalaceflooded"));
+
+        templeofthesun= new ImageIcon( (Objects.requireNonNull(getClass().getResource("templeofthesun.png"))));
+        tImageList.add(new ImageFinder(templeofthesun.getImage(),"templeofthesun"));
+
+        templeofthesunflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("templeofthesunflooded.png"))));
+        tImageList.add(new ImageFinder(templeofthesunflooded.getImage(),"templeofthesunflooded"));
+
+        templeofthemoon= new ImageIcon( (Objects.requireNonNull(getClass().getResource("templeofthemoon.png"))));
+        tImageList.add(new ImageFinder(templeofthemoon.getImage(),"templeofthemoon"));
+
+        templeofthemoodflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("templeofthemoonflooded.png"))));
+        tImageList.add(new ImageFinder(templeofthemoodflooded.getImage(),"templeofthemoonflooded"));
+
+        caveofshadows= new ImageIcon( (Objects.requireNonNull(getClass().getResource("caveofshadows.png"))));
+        tImageList.add(new ImageFinder(caveofshadows.getImage(),"caveofshadows"));
+
+        caveofshadowsflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("caveofshadowsflooded.png"))));
+        tImageList.add(new ImageFinder(caveofshadowsflooded.getImage(),"caveofshadowsflooded"));
+
+        caveofembers= new ImageIcon( (Objects.requireNonNull(getClass().getResource("caveofembers.png"))));
+        tImageList.add(new ImageFinder(caveofembers.getImage(),"caveofembers"));
+
+        caveofembersflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("caveofembersflooded.png"))));
+        tImageList.add(new ImageFinder(caveofembersflooded.getImage(),"caveofembersflooded"));
+
+        howlinggarden= new ImageIcon( (Objects.requireNonNull(getClass().getResource("howlinggarden.png"))));
+        tImageList.add(new ImageFinder(howlinggarden.getImage(),"howlinggarden"));
+
+        howlinggardenflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("howlinggardenflooded.png"))));
+        tImageList.add(new ImageFinder(howlinggardenflooded.getImage(),"howlinggardenflooded"));
+
+        whisperinggarden= new ImageIcon( (Objects.requireNonNull(getClass().getResource("whisperinggarden.png"))));
+        tImageList.add(new ImageFinder(whisperinggarden.getImage(),"whisperinggarden"));
+
+        whisperinggardenflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("whisperinggardenflooded.png"))));
+        tImageList.add(new ImageFinder(whisperinggardenflooded.getImage(),"whisperinggardenflooded"));
+
+        bronzegate=new ImageIcon( (Objects.requireNonNull(getClass().getResource("bronzegate.png"))));
+        tImageList.add(new ImageFinder(bronzegate.getImage(),"bronzegate"));
+
+        bronzegateflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("bronzegateflooded.png"))));
+        tImageList.add(new ImageFinder(bronzegateflooded.getImage(),"bronzegateflooded"));
+
+        goldgate=new ImageIcon( (Objects.requireNonNull(getClass().getResource("goldgate.png"))));
+        tImageList.add(new ImageFinder(goldgate.getImage(),"goldgate"));
+
+        goldgateflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("goldgateflooded.png"))));
+        tImageList.add(new ImageFinder(goldgateflooded.getImage(),"goldgateflooded"));
+
+        coppergate= new ImageIcon( (Objects.requireNonNull(getClass().getResource("coppergate.png"))));
+        tImageList.add(new ImageFinder(coppergate.getImage(),"coppergate"));
+
+        coppergateflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("coppergateflooded.png"))));
+        tImageList.add(new ImageFinder(coppergateflooded.getImage(),"coppergateflooded"));
+
+        silvergate= new ImageIcon( (Objects.requireNonNull(getClass().getResource("silvergate.png"))));
+        tImageList.add(new ImageFinder(silvergate.getImage(),"silvergate"));
+
+        silvergateflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("silvergateflooded.png"))));
+        tImageList.add(new ImageFinder(silvergateflooded.getImage(),"silvergateflooded"));
+
+        foolslanding= new ImageIcon( (Objects.requireNonNull(getClass().getResource("foolslanding.png"))));
+        tImageList.add(new ImageFinder(foolslanding.getImage(),"foolslanding"));
+
+        foolslaningflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("foolslandingflooded.png"))));
+        tImageList.add(new ImageFinder(foolslaningflooded.getImage(),"foolslandingflooded"));
+
+        irongate= new ImageIcon( (Objects.requireNonNull(getClass().getResource("irongate.png"))));
+        tImageList.add(new ImageFinder(irongate.getImage(),"irongate"));
+
+        irongateflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("irongateflooded.png"))));
+        tImageList.add(new ImageFinder(irongateflooded.getImage(),"irongateflooded"));
+
+        dunesofdeceptionflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("dunesofdeceptionflooded.png"))));
+        tImageList.add(new ImageFinder(dunesofdeceptionflooded.getImage(),"dunesofdeceptionflooded"));
+
+        dunesofdeception= new ImageIcon( (Objects.requireNonNull(getClass().getResource("dunesofdeception.png"))));
+        tImageList.add(new ImageFinder(dunesofdeception.getImage(),"dunesofdeception"));
+
+        citiesofabandonflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("citiesofabandonflooded.png"))));
+        tImageList.add(new ImageFinder(citiesofabandonflooded.getImage(),"citiesofabandonflooded"));
+
+        citiesofabandon= new ImageIcon( (Objects.requireNonNull(getClass().getResource("citiesofabandon.png"))));
+        tImageList.add(new ImageFinder(citiesofabandon.getImage(),"citiesofabandon"));
+
+        watchtowerflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("watchtowerflooded.png"))));
+        tImageList.add(new ImageFinder(watchtowerflooded.getImage(),"watchtowerflooded"));
+
+        watchtower= new ImageIcon( (Objects.requireNonNull(getClass().getResource("watchtower.png"))));
+        tImageList.add(new ImageFinder(watchtower.getImage(),"watchtower"));
+
+        twilighthollow= new ImageIcon( (Objects.requireNonNull(getClass().getResource("twilighthollow.png"))));
+        tImageList.add(new ImageFinder(twilighthollow.getImage(),"twilighthollow"));
+
+        twilighthollowflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("twilighthollowflooded.png"))));
+        tImageList.add(new ImageFinder(twilighthollowflooded.getImage(),"twilighthollowflooded"));
+
+        mistymarsh= new ImageIcon( (Objects.requireNonNull(getClass().getResource("mistymarsh.png"))));
+        tImageList.add(new ImageFinder(mistymarsh.getImage(),"mistymarsh"));
+
+        mistymarshflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("mistymarshflooded.png"))));
+        tImageList.add(new ImageFinder(mistymarshflooded.getImage(),"mistymarshflooded"));
+
+        lostlagoon= new ImageIcon( (Objects.requireNonNull(getClass().getResource("lostlagoon.png"))));
+        tImageList.add(new ImageFinder(lostlagoon.getImage(),"lostlagoon"));
+
+        lostlagoonflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("lostlagoonflooded.png"))));
+        tImageList.add(new ImageFinder(lostlagoonflooded.getImage(),"lostlagoonflooded"));
+
+        breakersbridge= new ImageIcon( (Objects.requireNonNull(getClass().getResource("breakersbridge.png"))));
+        tImageList.add(new ImageFinder(breakersbridge.getImage(),"breakersbridge"));
+
+        breakersbridgeflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("breakersbridgeflooded.png"))));
+        tImageList.add(new ImageFinder(breakersbridgeflooded.getImage(),"breakersbridgeflooded"));
+
+        observatoryflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("observatoryflooded.png"))));
+        tImageList.add(new ImageFinder(observatoryflooded.getImage(),"observatoryflooded"));
+
+        observatory= new ImageIcon( (Objects.requireNonNull(getClass().getResource("observatory.png"))));
+        tImageList.add(new ImageFinder(observatory.getImage(),"observatory"));
+
+        phantomrock= new ImageIcon( (Objects.requireNonNull(getClass().getResource("phantomrock.png"))));
+        tImageList.add(new ImageFinder(phantomrock.getImage(),"phantomrock"));
+
+        phantomrockflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("phantomrockflooded.png"))));
+        tImageList.add(new ImageFinder(phantomrockflooded.getImage(),"phantomrockflooded"));
+
+        crimsonforest= new ImageIcon( (Objects.requireNonNull(getClass().getResource("crimsonforest.png"))));
+        tImageList.add(new ImageFinder(crimsonforest.getImage(),"crimsonforest"));
+
+        crimsonforestflooded= new ImageIcon( (Objects.requireNonNull(getClass().getResource("crimsonforestflooded.png"))));
+        tImageList.add(new ImageFinder(crimsonforestflooded.getImage(),"crimsonforestflooded"));
+
+        thecrystaloffire= new ImageIcon( (Objects.requireNonNull(getClass().getResource("thecrystaloffire.png"))));
+        cImageList.add(new ImageFinder(thecrystaloffire.getImage(),"thecrystaloffire"));
+
+        theearthstone= new ImageIcon( (Objects.requireNonNull(getClass().getResource("theearthstone.png"))));
+        cImageList.add(new ImageFinder(theearthstone.getImage(),"theearthstone"));
+
+        helicopterlift= new ImageIcon( (Objects.requireNonNull(getClass().getResource("helicopterlift.png"))));
+        cImageList.add(new ImageFinder(helicopterlift.getImage(),"helicopterlift"));
+
+
+        theoceanschalice= new ImageIcon( (Objects.requireNonNull(getClass().getResource("theocean'schalice.png"))));
+        cImageList.add(new ImageFinder(theoceanschalice.getImage(),"theoceanschalice"));
+
+        thestatueofthewind= new ImageIcon( (Objects.requireNonNull(getClass().getResource("thestatueofthewind.png"))));
+        cImageList.add(new ImageFinder(thestatueofthewind.getImage(),"thestatueofthewind"));
+
+        sandbagCard= new ImageIcon( (Objects.requireNonNull(getClass().getResource("sandbagCard.png"))));
+        cImageList.add(new ImageFinder(sandbagCard.getImage(),"sandbagCard"));
+
+
+        explorer= new ImageIcon( (Objects.requireNonNull(getClass().getResource("explorer.png"))));
+        pImageList.add(new ImageFinder(explorer.getImage(),"explorer"));
+
+        navigator= new ImageIcon( (Objects.requireNonNull(getClass().getResource("navigator.png"))));
+        pImageList.add(new ImageFinder(navigator.getImage(),"navigator"));
+
+        engineer= new ImageIcon( (Objects.requireNonNull(getClass().getResource("engineer.png"))));
+        pImageList.add(new ImageFinder(engineer.getImage(),"engineer"));
+
+        pilot= new ImageIcon( (Objects.requireNonNull(getClass().getResource("bluepilot.PNG"))));
+        pImageList.add(new ImageFinder(pilot.getImage(),"pilot"));
+
+        diver= new ImageIcon( (Objects.requireNonNull(getClass().getResource("diver.png"))));
+        pImageList.add(new ImageFinder(diver.getImage(),"diver"));
+
+        messenger= new ImageIcon( (Objects.requireNonNull(getClass().getResource("messenger.png"))));
+        pImageList.add(new ImageFinder(messenger.getImage(),"messenger"));
 
 
     }
@@ -83,198 +278,6 @@ class MainPermanentPanel extends JPanel{
 
     public void paint(Graphics g) {
         try {
-
-            background= new ImageIcon(( (getClass().getResource("Allimages/Background.PNG"))));
-            fImage= new ImageIcon(( (getClass().getResource("Allimages/FloodCard.PNG"))));
-            tImage= new ImageIcon( (getClass().getResource("Allimages/TreasureCard.PNG")));
-            fDImage= new ImageIcon( (getClass().getResource("Allimages/FloodDiscard.PNG")));
-            tDImage= new ImageIcon( (getClass().getResource("Allimages/TreasureDiscard.PNG")));
-            waterMeterImage= new ImageIcon( (getClass().getResource("Allimages/WaterMeter.PNG")));
-            blueTreasure= new ImageIcon( (getClass().getResource("Allimages/BlueTreasure.PNG")));
-            lionTreasure= new ImageIcon( (getClass().getResource("Allimages/LionTreasure.PNG")));
-            purpleTreasure= new ImageIcon( (getClass().getResource("Allimages/PurpleTreasure.PNG")));
-            redTreasure= new ImageIcon( (getClass().getResource("Allimages/RedTreasure.PNG")));
-            waterMarker= new ImageIcon( (getClass().getResource("Allimages/WaterMarker.png")));
-
-            tidalpalace= new ImageIcon( (getClass().getResource("Allimages/tidalpalace.png")));
-            tImageList.add(new ImageFinder(tidalpalace.getImage(),"tidalpalace"));
-
-            tidalpalaceflooded= new ImageIcon( (getClass().getResource("Allimages/tidalpalaceflooded.png")));
-            tImageList.add(new ImageFinder(tidalpalaceflooded.getImage(),"tidalpalaceflooded"));
-
-            coralpalace= new ImageIcon( (getClass().getResource("Allimages/coralpalace.png")));
-            tImageList.add(new ImageFinder(coralpalace.getImage(),"coralpalace"));
-
-            coralpalaceflooded= new ImageIcon( (getClass().getResource("Allimages/coralpalaceflooded.png")));
-            tImageList.add(new ImageFinder(coralpalaceflooded.getImage(),"coralpalaceflooded"));
-
-            templeofthesun= new ImageIcon( (getClass().getResource("Allimages/templeofthesun.png")));
-            tImageList.add(new ImageFinder(templeofthesun.getImage(),"templeofthesun"));
-
-            templeofthesunflooded= new ImageIcon( (getClass().getResource("Allimages/templeofthesunflooded.png")));
-            tImageList.add(new ImageFinder(templeofthesunflooded.getImage(),"templeofthesunflooded"));
-
-            templeofthemoon= new ImageIcon( (getClass().getResource("Allimages/templeofthemoon.png")));
-            tImageList.add(new ImageFinder(templeofthemoon.getImage(),"templeofthemoon"));
-
-            templeofthemoodflooded= new ImageIcon( (getClass().getResource("Allimages/templeofthemoonflooded.png")));
-            tImageList.add(new ImageFinder(templeofthemoodflooded.getImage(),"templeofthemoonflooded"));
-
-            caveofshadows= new ImageIcon( (getClass().getResource("Allimages/caveofshadows.png")));
-            tImageList.add(new ImageFinder(caveofshadows.getImage(),"caveofshadows"));
-
-            caveofshadowsflooded= new ImageIcon( (getClass().getResource("Allimages/caveofshadowsflooded.png")));
-            tImageList.add(new ImageFinder(caveofshadowsflooded.getImage(),"caveofshadowsflooded"));
-
-            caveofembers= new ImageIcon( (getClass().getResource("Allimages/caveofembers.png")));
-            tImageList.add(new ImageFinder(caveofembers.getImage(),"caveofembers"));
-
-            caveofembersflooded= new ImageIcon( (getClass().getResource("Allimages/caveofembersflooded.png")));
-            tImageList.add(new ImageFinder(caveofembersflooded.getImage(),"caveofembersflooded"));
-
-            howlinggarden= new ImageIcon( (getClass().getResource("Allimages/howlinggarden.png")));
-            tImageList.add(new ImageFinder(howlinggarden.getImage(),"howlinggarden"));
-
-            howlinggardenflooded= new ImageIcon( (getClass().getResource("Allimages/howlinggardenflooded.png")));
-            tImageList.add(new ImageFinder(howlinggardenflooded.getImage(),"howlinggardenflooded"));
-
-            whisperinggarden= new ImageIcon( (getClass().getResource("Allimages/whisperinggarden.png")));
-            tImageList.add(new ImageFinder(whisperinggarden.getImage(),"whisperinggarden"));
-
-            whisperinggardenflooded= new ImageIcon( (getClass().getResource("Allimages/whisperinggardenflooded.png")));
-            tImageList.add(new ImageFinder(whisperinggardenflooded.getImage(),"whisperinggardenflooded"));
-
-            bronzegate=new ImageIcon( (getClass().getResource("Allimages/bronzegate.png")));
-            tImageList.add(new ImageFinder(bronzegate.getImage(),"bronzegate"));
-
-            bronzegateflooded= new ImageIcon( (getClass().getResource("Allimages/bronzegateflooded.png")));
-            tImageList.add(new ImageFinder(bronzegateflooded.getImage(),"bronzegateflooded"));
-
-            goldgate=new ImageIcon( (getClass().getResource("Allimages/goldgate.png")));
-            tImageList.add(new ImageFinder(goldgate.getImage(),"goldgate"));
-
-            goldgateflooded= new ImageIcon( (getClass().getResource("Allimages/goldgateflooded.png")));
-            tImageList.add(new ImageFinder(goldgateflooded.getImage(),"goldgateflooded"));
-
-            coppergate= new ImageIcon( (getClass().getResource("Allimages/coppergate.png")));
-            tImageList.add(new ImageFinder(coppergate.getImage(),"coppergate"));
-
-            coppergateflooded= new ImageIcon( (getClass().getResource("Allimages/coppergateflooded.png")));
-            tImageList.add(new ImageFinder(coppergateflooded.getImage(),"coppergateflooded"));
-
-            silvergate= new ImageIcon( (getClass().getResource("Allimages/silvergate.png")));
-            tImageList.add(new ImageFinder(silvergate.getImage(),"silvergate"));
-
-            silvergateflooded= new ImageIcon( (getClass().getResource("Allimages/silvergateflooded.png")));
-            tImageList.add(new ImageFinder(silvergateflooded.getImage(),"silvergateflooded"));
-
-            foolslanding= new ImageIcon( (getClass().getResource("Allimages/foolslanding.png")));
-            tImageList.add(new ImageFinder(foolslanding.getImage(),"foolslanding"));
-
-            foolslaningflooded= new ImageIcon( (getClass().getResource("Allimages/foolslandingflooded.png")));
-            tImageList.add(new ImageFinder(foolslaningflooded.getImage(),"foolslandingflooded"));
-
-            irongate= new ImageIcon( (getClass().getResource("Allimages/irongate.png")));
-            tImageList.add(new ImageFinder(irongate.getImage(),"irongate"));
-
-            irongateflooded= new ImageIcon( (getClass().getResource("Allimages/irongateflooded.png")));
-            tImageList.add(new ImageFinder(irongateflooded.getImage(),"irongateflooded"));
-
-            dunesofdeceptionflooded= new ImageIcon( (getClass().getResource("Allimages/dunesofdeceptionflooded.png")));
-            tImageList.add(new ImageFinder(dunesofdeceptionflooded.getImage(),"dunesofdeceptionflooded"));
-
-            dunesofdeception= new ImageIcon( (getClass().getResource("Allimages/dunesofdeception.png")));
-            tImageList.add(new ImageFinder(dunesofdeception.getImage(),"dunesofdeception"));
-
-            citiesofabandonflooded= new ImageIcon( (getClass().getResource("Allimages/citiesofabandonflooded.png")));
-            tImageList.add(new ImageFinder(citiesofabandonflooded.getImage(),"citiesofabandonflooded"));
-
-            citiesofabandon= new ImageIcon( (getClass().getResource("Allimages/citiesofabandon.png")));
-            tImageList.add(new ImageFinder(citiesofabandon.getImage(),"citiesofabandon"));
-
-            watchtowerflooded= new ImageIcon( (getClass().getResource("Allimages/watchtowerflooded.png")));
-            tImageList.add(new ImageFinder(watchtowerflooded.getImage(),"watchtowerflooded"));
-
-            watchtower= new ImageIcon( (getClass().getResource("Allimages/watchtower.png")));
-            tImageList.add(new ImageFinder(watchtower.getImage(),"watchtower"));
-
-            twilighthollow= new ImageIcon( (getClass().getResource("Allimages/twilighthollow.png")));
-            tImageList.add(new ImageFinder(twilighthollow.getImage(),"twilighthollow"));
-
-            twilighthollowflooded= new ImageIcon( (getClass().getResource("Allimages/twilighthollowflooded.png")));
-            tImageList.add(new ImageFinder(twilighthollowflooded.getImage(),"twilighthollowflooded"));
-
-            mistymarsh= new ImageIcon( (getClass().getResource("Allimages/mistymarsh.png")));
-            tImageList.add(new ImageFinder(mistymarsh.getImage(),"mistymarsh"));
-
-            mistymarshflooded= new ImageIcon( (getClass().getResource("Allimages/mistymarshflooded.png")));
-            tImageList.add(new ImageFinder(mistymarshflooded.getImage(),"mistymarshflooded"));
-
-            lostlagoon= new ImageIcon( (getClass().getResource("Allimages/lostlagoon.png")));
-            tImageList.add(new ImageFinder(lostlagoon.getImage(),"lostlagoon"));
-
-            lostlagoonflooded= new ImageIcon( (getClass().getResource("Allimages/lostlagoonflooded.png")));
-            tImageList.add(new ImageFinder(lostlagoonflooded.getImage(),"lostlagoonflooded"));
-
-            breakersbridge= new ImageIcon( (getClass().getResource("Allimages/breakersbridge.png")));
-            tImageList.add(new ImageFinder(breakersbridge.getImage(),"breakersbridge"));
-
-            breakersbridgeflooded= new ImageIcon( (getClass().getResource("Allimages/breakersbridgeflooded.png")));
-            tImageList.add(new ImageFinder(breakersbridgeflooded.getImage(),"breakersbridgeflooded"));
-
-            observatoryflooded= new ImageIcon( (getClass().getResource("Allimages/observatoryflooded.png")));
-            tImageList.add(new ImageFinder(observatoryflooded.getImage(),"observatoryflooded"));
-
-            observatory= new ImageIcon( (getClass().getResource("Allimages/observatory.png")));
-            tImageList.add(new ImageFinder(observatory.getImage(),"observatory"));
-
-            phantomrock= new ImageIcon( (getClass().getResource("Allimages/phantomrock.png")));
-            tImageList.add(new ImageFinder(phantomrock.getImage(),"phantomrock"));
-
-            phantomrockflooded= new ImageIcon( (getClass().getResource("Allimages/phantomrockflooded.png")));
-            tImageList.add(new ImageFinder(phantomrockflooded.getImage(),"phantomrockflooded"));
-
-            crimsonforest= new ImageIcon( (getClass().getResource("Allimages/crimsonforest.png")));
-            tImageList.add(new ImageFinder(crimsonforest.getImage(),"crimsonforest"));
-
-            crimsonforestflooded= new ImageIcon( (getClass().getResource("Allimages/crimsonforestflooded.png")));
-            tImageList.add(new ImageFinder(crimsonforestflooded.getImage(),"crimsonforestflooded"));
-
-            thecrystaloffire= new ImageIcon( (getClass().getResource("Allimages/thecrystaloffire.png")));
-            cImageList.add(new ImageFinder(thecrystaloffire.getImage(),"thecrystaloffire"));
-
-            theearthstone= new ImageIcon( (getClass().getResource("Allimages/theearthstone.png")));
-            cImageList.add(new ImageFinder(theearthstone.getImage(),"theearthstone"));
-
-            helicopterlift= new ImageIcon( (getClass().getResource("Allimages/helicopterlift.png")));
-            cImageList.add(new ImageFinder(helicopterlift.getImage(),"helicopterlift"));
-
-
-            theoceanschalice= new ImageIcon( (getClass().getResource("Allimages/theocean'schalice.png")));
-            cImageList.add(new ImageFinder(theoceanschalice.getImage(),"theoceanschalice"));
-
-            sandbagCard= new ImageIcon( (getClass().getResource("Allimages/sandbagCard.png")));
-            cImageList.add(new ImageFinder(sandbagCard.getImage(),"sandbagCard"));
-
-
-            explorer= new ImageIcon( (getClass().getResource("Allimages/explorer.png")));
-            pImageList.add(new ImageFinder(explorer.getImage(),"explorer"));
-
-            navigator= new ImageIcon( (getClass().getResource("Allimages/navigator.png")));
-            pImageList.add(new ImageFinder(navigator.getImage(),"navigator"));
-
-            engineer= new ImageIcon( (getClass().getResource("Allimages/engineer.png")));
-            pImageList.add(new ImageFinder(engineer.getImage(),"engineer"));
-
-            pilot= new ImageIcon( (getClass().getResource("Allimages/pilot.png")));
-            pImageList.add(new ImageFinder(pilot.getImage(),"pilot"));
-
-            diver= new ImageIcon( (getClass().getResource("Allimages/diver.png")));
-            pImageList.add(new ImageFinder(diver.getImage(),"diver"));
-
-            messenger= new ImageIcon( (getClass().getResource("Allimages/messenger.png")));
-            pImageList.add(new ImageFinder(messenger.getImage(),"messenger"));
-
             drawCard(g);
         }
         catch(Exception E) {
@@ -671,12 +674,11 @@ class MainPermanentPanel extends JPanel{
         String title= tileOne.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileOne.getFloodedState().equals("Flooded")){
+        if(tileOne.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",450, 30);
         }
         Image rand= findImage(title);
-        if(!tileOne.getFloodedState().equals("Sunk")) {
+        if(!tileOne.getFloodedState().equals("sunk")) {
             g.drawImage(rand,450, 30, 80, 80,null);
         }else{
             g.drawRect(450, 30, 80, 80);
@@ -689,12 +691,11 @@ class MainPermanentPanel extends JPanel{
         title= tileTwo.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileOne.getFloodedState().equals("Flooded")){
+        if(tileOne.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",540, 30);
         }
         rand= findImage(title);
-        if(!tileTwo.getFloodedState().equals("Sunk")) {
+        if(!tileTwo.getFloodedState().equals("sunk")) {
 
             g.drawImage(rand,540, 30, 80, 80, null);
         }else{
@@ -710,12 +711,11 @@ class MainPermanentPanel extends JPanel{
         title= tileThree.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileThree.getFloodedState().equals("Flooded")){
+        if(tileThree.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",630, 130);
         }
         rand= findImage(title);
-        if(!tileThree.getFloodedState().equals("Sunk")) {
+        if(!tileThree.getFloodedState().equals("sunk")) {
             g.drawImage(rand,360,130, 80,80,null);
         }
         else{
@@ -725,12 +725,11 @@ class MainPermanentPanel extends JPanel{
         title= tileFour.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileFour.getFloodedState().equals("Flooded")){
+        if(tileFour.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",450, 130);
         }
         rand= findImage(title);
-        if(!tileFour.getFloodedState().equals("Sunk")) {
+        if(!tileFour.getFloodedState().equals("sunk")) {
             g.drawImage(rand,450,130, 80,80,null);
         }else{
             g.drawRect(450,130, 80,80);
@@ -739,12 +738,11 @@ class MainPermanentPanel extends JPanel{
         title= tileFive.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileFive.getFloodedState().equals("Flooded")){
+        if(tileFive.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",540, 130);
         }
         rand= findImage(title);
-        if(!tileFive.getFloodedState().equals("Sunk")) {
+        if(!tileFive.getFloodedState().equals("sunk")) {
             g.drawImage(rand,540,130, 80,80,null);
         }else{
             g.drawRect(540,130, 80,80);
@@ -753,12 +751,11 @@ class MainPermanentPanel extends JPanel{
         title= tileSix.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileSix.getFloodedState().equals("Flooded")){
+        if(tileSix.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",630, 130);
         }
         rand= findImage(title);
-        if(!tileSix.getFloodedState().equals("Sunk")) {
+        if(!tileSix.getFloodedState().equals("sunk")) {
             g.drawImage(rand,630,130, 80,80,null);
         }else{
             g.drawRect(630,130, 80,80);
@@ -770,12 +767,11 @@ class MainPermanentPanel extends JPanel{
         title= tileSeven.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileSeven.getFloodedState().equals("Flooded")){
+        if(tileSeven.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",270, 230);
         }
         rand= findImage(title);
-        if(!tileSeven.getFloodedState().equals("Sunk")) {
+        if(!tileSeven.getFloodedState().equals("sunk")) {
             g.drawImage(rand,270, 230, 80,80,null);
         }else{
             g.drawRect(270, 230, 80,80);
@@ -785,12 +781,11 @@ class MainPermanentPanel extends JPanel{
         title= tileEight.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileEight.getFloodedState().equals("Flooded")){
+        if(tileEight.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",360, 230);
         }
         rand= findImage(title);
-        if(!tileEight.getFloodedState().equals("Sunk")) {
+        if(!tileEight.getFloodedState().equals("sunk")) {
             g.drawImage(rand,360,230, 80,80,null);
         }else{
             g.drawRect(360,230, 80,80);
@@ -801,12 +796,11 @@ class MainPermanentPanel extends JPanel{
         title= tileNine.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileNine.getFloodedState().equals("Flooded")){
+        if(tileNine.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",450, 230);
         }
         rand= findImage(title);
-        if(!tileNine.getFloodedState().equals("Sunk")) {
+        if(!tileNine.getFloodedState().equals("sunk")) {
             g.drawImage(rand,450,230, 80,80,null);
         }else{
             g.drawRect(450,230, 80,80);
@@ -816,12 +810,11 @@ class MainPermanentPanel extends JPanel{
         title= tileTen.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileTen.getFloodedState().equals("Flooded")){
+        if(tileTen.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",540, 230);
         }
         rand= findImage(title);
-        if(!tileTen.getFloodedState().equals("Sunk")) {
+        if(!tileTen.getFloodedState().equals("sunk")) {
             g.drawImage(rand,540,230, 80,80,null);
         }else{
             g.drawRect(540,230, 80,80);
@@ -831,12 +824,11 @@ class MainPermanentPanel extends JPanel{
         title= tileEleven.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileEleven.getFloodedState().equals("Flooded")){
+        if(tileEleven.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",630, 230);
         }
         rand= findImage(title);
-        if(!tileEleven.getFloodedState().equals("Sunk")) {
+        if(!tileEleven.getFloodedState().equals("sunk")) {
             g.drawImage(rand,630,230, 80,80,null);
         }else{
             g.drawRect(630,230, 80,80);
@@ -846,12 +838,11 @@ class MainPermanentPanel extends JPanel{
         title= tileTwelve.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileTwelve.getFloodedState().equals("Flooded")){
+        if(tileTwelve.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",720, 230);
         }
         rand= findImage(title);
-        if(!tileTwelve.getFloodedState().equals("Sunk")) {
+        if(!tileTwelve.getFloodedState().equals("sunk")) {
             g.drawImage(rand,720, 230, 80,80,null);
         }else{
             g.drawRect(720, 230, 80,80);
@@ -863,12 +854,11 @@ class MainPermanentPanel extends JPanel{
         title= tileThirteen.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileThirteen.getFloodedState().equals("Flooded")){
+        if(tileThirteen.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",270, 340);
         }
         rand= findImage(title);
-        if(!tileThirteen.getFloodedState().equals("Sunk")) {
+        if(!tileThirteen.getFloodedState().equals("sunk")) {
             g.drawImage(rand,270, 340, 80,80,null);
         }else{
             g.drawRect(270, 340, 80,80);
@@ -878,12 +868,11 @@ class MainPermanentPanel extends JPanel{
         title= tileFourteen.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileFourteen.getFloodedState().equals("Flooded")){
+        if(tileFourteen.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",360, 340);
         }
         rand= findImage(title);
-        if(!tileFourteen.getFloodedState().equals("Sunk")) {
+        if(!tileFourteen.getFloodedState().equals("sunk")) {
             g.drawImage(rand,360,340, 80,80,null);
         }else{
             g.drawRect(360,340, 80,80);
@@ -893,12 +882,11 @@ class MainPermanentPanel extends JPanel{
         title= tileFifteen.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileFifteen.getFloodedState().equals("Flooded")){
+        if(tileFifteen.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",450, 340);
         }
         rand= findImage(title);
-        if(!tileFifteen.getFloodedState().equals("Sunk")) {
+        if(!tileFifteen.getFloodedState().equals("sunk")) {
             g.drawImage(rand,450,340, 80,80,null);
         }else{
             g.drawRect(450,340, 80,80);
@@ -908,12 +896,11 @@ class MainPermanentPanel extends JPanel{
         title= tileSixteen.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileSixteen.getFloodedState().equals("Flooded")){
+        if(tileSixteen.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",540, 340);
         }
         rand= findImage(title);
-        if(!tileSixteen.getFloodedState().equals("Sunk")) {
+        if(!tileSixteen.getFloodedState().equals("sunk")) {
             g.drawImage(rand,540,340, 80,80,null);
         }else{
             g.drawRect(540,340, 80,80);
@@ -922,12 +909,11 @@ class MainPermanentPanel extends JPanel{
         title= tileSeventeen.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileSeventeen.getFloodedState().equals("Flooded")){
+        if(tileSeventeen.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",630, 340);
         }
         rand= findImage(title);
-        if(!tileSeventeen.getFloodedState().equals("Sunk")) {
+        if(!tileSeventeen.getFloodedState().equals("sunk")) {
             g.drawImage(rand,630,340, 80,80,null);
         }else{
             g.drawRect(630,340, 80,80);
@@ -937,12 +923,11 @@ class MainPermanentPanel extends JPanel{
         title= tileEighteen.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileEighteen.getFloodedState().equals("Flooded")){
+        if(tileEighteen.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",720, 340);
         }
         rand= findImage(title);
-        if(!tileEighteen.getFloodedState().equals("Sunk")) {
+        if(!tileEighteen.getFloodedState().equals("sunk")) {
             g.drawImage(rand,720, 340, 80,80,null);
         }else{
             g.drawRect(720, 340, 80,80);
@@ -953,12 +938,11 @@ class MainPermanentPanel extends JPanel{
         title= tileNineteen.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileNineteen.getFloodedState().equals("Flooded")){
+        if(tileNineteen.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",360, 440);
         }
         rand= findImage(title);
-        if(!tileNineteen.getFloodedState().equals("Sunk")){
+        if(!tileNineteen.getFloodedState().equals("sunk")){
             g.drawImage(rand,360,440, 80,80,null);
         }else{
             g.drawRect(360,440, 80,80);
@@ -968,12 +952,11 @@ class MainPermanentPanel extends JPanel{
         title= tileTwenty.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileTwenty.getFloodedState().equals("Flooded")){
+        if(tileTwenty.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",450, 440);
         }
         rand= findImage(title);
-        if(!tileTwenty.getFloodedState().equals("Sunk")) {
+        if(!tileTwenty.getFloodedState().equals("sunk")) {
             g.drawImage(rand,450,440, 80,80,null);
         }else{
             g.drawRect(450,440, 80,80);
@@ -983,12 +966,11 @@ class MainPermanentPanel extends JPanel{
         title= tileTwentyOne.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileTwentyOne.getFloodedState().equals("Flooded")){
+        if(tileTwentyOne.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",540, 440);
         }
         rand= findImage(title);
-        if(!tileTwentyOne.getFloodedState().equals("Sunk")) {
+        if(!tileTwentyOne.getFloodedState().equals("sunk")) {
             g.drawImage(rand,540,440, 80,80,null);
         }else{
             g.drawRect(540,440, 80,80);
@@ -998,12 +980,11 @@ class MainPermanentPanel extends JPanel{
         title= tileTwentyTwo.getName();
         title=title.toLowerCase();
         title= title.replaceAll("\\s", "");
-        if(tileTwentyTwo.getFloodedState().equals("Flooded")){
+        if(tileTwentyTwo.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",630, 440);
         }
         rand= findImage(title);
-        if(!tileTwentyTwo.getFloodedState().equals("Sunk")) {
+        if(!tileTwentyTwo.getFloodedState().equals("sunk")) {
             g.drawImage(rand,630,440, 80,80,null);
         }else{
             g.drawRect(630,440, 80,80);
@@ -1020,10 +1001,9 @@ class MainPermanentPanel extends JPanel{
         title= title.replaceAll("\\s", "");
         if(tileTwentyThree.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",450, 540);
         }
         rand= findImage(title);
-        if(!tileTwentyThree.getFloodedState().equals("Sunk")) {
+        if(!tileTwentyThree.getFloodedState().equals("sunk")) {
             g.drawImage(rand,450, 540, 80, 80,null);
         }else{
             g.drawRect(450,540, 80,80);
@@ -1034,10 +1014,9 @@ class MainPermanentPanel extends JPanel{
         title= title.replaceAll("\\s", "");
         if(tileTwentyFour.getFloodedState().equals("flooded")){
             title+="flooded";
-            g.drawString("FLOODED",540, 540);
         }
         rand= findImage(title);
-        if(!tileTwentyFour.getFloodedState().equals("Sunk")) {
+        if(!tileTwentyFour.getFloodedState().equals("sunk")) {
             g.drawImage(rand,540,540, 80,80,null);
         }else{
             g.drawRect(540,540, 80,80);
@@ -1060,6 +1039,7 @@ class MainPermanentPanel extends JPanel{
             repaint();
 
         }
+
 
     }
     public Image findPlayerImage(String n){
@@ -1090,6 +1070,15 @@ class MainPermanentPanel extends JPanel{
         for (ImageFinder k : cImageList) {
             if (k.getName().equals(n)) {
                 return k.getImage();
+            }
+            if(n.equals("theoceanschalice")){
+                return theoceanschalice.getImage();
+            }
+            if(n.equals("theocean’schalice")) {
+                return theoceanschalice.getImage();
+            }
+            if(n.equals("thestatueofthewind")){
+                return thestatueofthewind.getImage();
             }
         }
         return waterMarker.getImage();

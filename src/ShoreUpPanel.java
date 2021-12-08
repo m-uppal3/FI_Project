@@ -39,7 +39,7 @@ public class ShoreUpPanel extends JFrame{
         up.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
-               g.shoreupUp();
+                g.shoreupUp();
                 dispose();
 
             }

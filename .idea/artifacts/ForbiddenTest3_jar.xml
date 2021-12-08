@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ForbiddenTest3:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ForbiddenTest3_jar</output-path>
+    <root id="archive" name="Forbidden Test.jar">
+      <element id="module-output" name="Forbidden Test" />
+      <element id="dir-copy" path="$PROJECT_DIR$/src/Allimages" />
+    </root>
+  </artifact>
+</component>

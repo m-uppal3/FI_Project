@@ -49,14 +49,14 @@ public class PilotSpecPanel extends JFrame{
 
                 place = location.getText();
                 IslandMap bo = g.getGameBoard();
-                IslandTile[][] sam = bo.getIslandMap();
+                IslandTile[][] sa = bo.getIslandMap();
 
-                for(int r = 0; r < sam.length; r++){
-                    for(int c = 0; c < sam[r].length; c++){
+                for(int r = 0; r < sa.length; r++){
+                    for(int c = 0; c < sa[r].length; c++){
 
-                        IslandTile temp = sam[r][c];
-                        if (temp.getName().equals(place)){
-                             coor = temp.getCoordinate();
+                        ;
+                        if (sa[r][c].getName().equals(place)){
+                             coor = sa[r][c].getCoordinate();
                         }
 
                     }

@@ -91,6 +91,18 @@ public class BasicPermanentPanel extends JFrame{
             public void actionPerformed(ActionEvent e) {
 
                 if(gameState.gameLost()) {
+
+                    ArrayList<Player> playersArrayList = (gameState.getPlayers()).getPlayersUsed();
+                    if(rand < playersArrayList.size()){
+                        currentPlayer = playersArrayList.get(rand);
+                        rand++;
+                        mul.nextPlayer();
+
+                    }
+                    else{
+                        rand=0;
+                        currentPlayer = playersArrayList.get(rand);
+                    }
                     WaterMeter meter = gameState.getWaterMeter();
                     IslandMap map = gameState.getGameBoard();
                     FloodCardsStack floodCards = gameState.getFloodCards();
@@ -98,7 +110,7 @@ public class BasicPermanentPanel extends JFrame{
                     TreasureStack treStack = gameState.getTreasures();
                     Multiplayer mul = gameState.getPlayers();
                     //gameState.startGame();
-                    ArrayList<Player> playersArrayList = (gameState.getPlayers()).getPlayersUsed();
+
                     JFrame mainPermanentPanelFinal = new JFrame("Main game");
                     mainPermanentPanelFinal.setSize(1100, 675);
                     TemporaryPanels pan = new TemporaryPanels("Action Panel", currentPlayer, gameState, ml);
@@ -108,14 +120,7 @@ public class BasicPermanentPanel extends JFrame{
                         IslandSinkingPanel ip = new IslandSinkingPanel("Island Sinking Panel", currentPlayer, gameState);
                     }
 
-                    if(rand < playersArrayList.size() ){
-                        currentPlayer = playersArrayList.get(rand);
-                        rand++;
-                    }
-                    else{
-                        rand=0;
-                        currentPlayer = playersArrayList.get(rand);
-                    }
+
                 }
                 else if(!gameState.gameLost()){
                     JLabel newinstructions = new JLabel("Game lost!");
