@@ -46,7 +46,7 @@ public class IntroductionPanel extends JFrame {
         introPanel.setBackground(new Color(0,0,0,65));
 
 
-        //the game title on the panel
+
         title = new JLabel("Forbidden Island");
         title.setBounds(0,50,800,80);
         title.setFont(new Font("Simsun", Font.PLAIN, 80));
